@@ -1,11 +1,12 @@
+# For deployment on render.com and others
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /
 
 COPY . .
 
-RUN go build -o Excalibur
+RUN go build Excalibur
 
 EXPOSE 8080
 
-CMD ["./Excalibur"]
+CMD [ "./Excalibur" ]
