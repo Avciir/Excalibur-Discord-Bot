@@ -1,9 +1,11 @@
 FROM golang:latest
 
-WORKDIR /
+WORKDIR /app
 
 COPY . .
 
-RUN go build Excalibur
+RUN go build -o Excalibur
 
-CMD [ "./Excalibur" ]
+EXPOSE 8080
+
+CMD ["./Excalibur"]
